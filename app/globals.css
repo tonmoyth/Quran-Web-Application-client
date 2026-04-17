@@ -5,8 +5,22 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-    --font-heading: var(--font-sans);
-    --font-sans: var(--font-sans);
+    --font-heading: var(--font-newsreader);
+    --font-headline: var(--font-newsreader);
+    --font-serif: var(--font-newsreader);
+    --font-sans: var(--font-manrope);
+    --font-body: var(--font-manrope);
+    --font-label: var(--font-manrope);
+    /* Dynamic Arabic Font populated by local storage context */
+    --font-arabic: var(--font-arabic-dynamic, var(--font-amiri));
+
+    --color-text: var(--text);
+    --color-background-custom: var(--background);
+    --color-primary-custom: var(--primary);
+    --color-secondary-custom: var(--secondary);
+    --color-accent-custom: var(--accent);
+
+    /* Map Shadcn Variables to user colors */
     --color-sidebar-ring: var(--sidebar-ring);
     --color-sidebar-border: var(--sidebar-border);
     --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -15,14 +29,7 @@
     --color-sidebar-primary: var(--sidebar-primary);
     --color-sidebar-foreground: var(--sidebar-foreground);
     --color-sidebar: var(--sidebar);
-    --color-chart-5: var(--chart-5);
-    --color-chart-4: var(--chart-4);
-    --color-chart-3: var(--chart-3);
-    --color-chart-2: var(--chart-2);
-    --color-chart-1: var(--chart-1);
-    --color-ring: var(--ring);
-    --color-input: var(--input);
-    --color-border: var(--border);
+    
     --color-destructive: var(--destructive);
     --color-accent-foreground: var(--accent-foreground);
     --color-accent: var(--accent);
@@ -38,6 +45,10 @@
     --color-card: var(--card);
     --color-foreground: var(--foreground);
     --color-background: var(--background);
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+
     --radius-sm: calc(var(--radius) * 0.6);
     --radius-md: calc(var(--radius) * 0.8);
     --radius-lg: var(--radius);
@@ -47,73 +58,71 @@
     --radius-4xl: calc(var(--radius) * 2.6);
 }
 
-:root {
-    --background: oklch(1 0 0);
-    --foreground: oklch(0.145 0 0);
-    --card: oklch(1 0 0);
-    --card-foreground: oklch(0.145 0 0);
-    --popover: oklch(1 0 0);
-    --popover-foreground: oklch(0.145 0 0);
-    --primary: oklch(0.205 0 0);
-    --primary-foreground: oklch(0.985 0 0);
-    --secondary: oklch(0.97 0 0);
-    --secondary-foreground: oklch(0.205 0 0);
-    --muted: oklch(0.97 0 0);
-    --muted-foreground: oklch(0.556 0 0);
-    --accent: oklch(0.97 0 0);
-    --accent-foreground: oklch(0.205 0 0);
-    --destructive: oklch(0.577 0.245 27.325);
-    --border: oklch(0.922 0 0);
-    --input: oklch(0.922 0 0);
-    --ring: oklch(0.708 0 0);
-    --chart-1: oklch(0.87 0 0);
-    --chart-2: oklch(0.556 0 0);
-    --chart-3: oklch(0.439 0 0);
-    --chart-4: oklch(0.371 0 0);
-    --chart-5: oklch(0.269 0 0);
+:root, :root[data-theme="light"] {
+    --text: #130f14;
+    --background: #f8f6f8;
+    --primary: #4b3a4b;
+    --secondary: #b6a4a0;
+    --accent: #8c8169;
+
+    /* Shadcn defaults */
+    --foreground: var(--text);
+    --card: var(--background);
+    --card-foreground: var(--text);
+    --popover: var(--background);
+    --popover-foreground: var(--text);
+    --primary-foreground: #ffffff;
+    --secondary-foreground: #ffffff;
+    --muted: color-mix(in srgb, var(--background) 90%, black);
+    --muted-foreground: color-mix(in srgb, var(--text) 70%, transparent);
+    --accent-foreground: #ffffff;
+    --destructive: #ef4444;
+    --border: color-mix(in srgb, var(--primary) 20%, transparent);
+    --input: color-mix(in srgb, var(--primary) 20%, transparent);
+    --ring: var(--primary);
+    
     --radius: 0.625rem;
-    --sidebar: oklch(0.985 0 0);
-    --sidebar-foreground: oklch(0.145 0 0);
-    --sidebar-primary: oklch(0.205 0 0);
-    --sidebar-primary-foreground: oklch(0.985 0 0);
-    --sidebar-accent: oklch(0.97 0 0);
-    --sidebar-accent-foreground: oklch(0.205 0 0);
-    --sidebar-border: oklch(0.922 0 0);
-    --sidebar-ring: oklch(0.708 0 0);
+    --sidebar: var(--background);
+    --sidebar-foreground: var(--text);
+    --sidebar-primary: var(--primary);
+    --sidebar-primary-foreground: #ffffff;
+    --sidebar-accent: var(--secondary);
+    --sidebar-accent-foreground: #ffffff;
+    --sidebar-border: color-mix(in srgb, var(--primary) 20%, transparent);
+    --sidebar-ring: var(--primary);
 }
 
-.dark {
-    --background: oklch(0.145 0 0);
-    --foreground: oklch(0.985 0 0);
-    --card: oklch(0.205 0 0);
-    --card-foreground: oklch(0.985 0 0);
-    --popover: oklch(0.205 0 0);
-    --popover-foreground: oklch(0.985 0 0);
-    --primary: oklch(0.922 0 0);
-    --primary-foreground: oklch(0.205 0 0);
-    --secondary: oklch(0.269 0 0);
-    --secondary-foreground: oklch(0.985 0 0);
-    --muted: oklch(0.269 0 0);
-    --muted-foreground: oklch(0.708 0 0);
-    --accent: oklch(0.269 0 0);
-    --accent-foreground: oklch(0.985 0 0);
-    --destructive: oklch(0.704 0.191 22.216);
-    --border: oklch(1 0 0 / 10%);
-    --input: oklch(1 0 0 / 15%);
-    --ring: oklch(0.556 0 0);
-    --chart-1: oklch(0.87 0 0);
-    --chart-2: oklch(0.556 0 0);
-    --chart-3: oklch(0.439 0 0);
-    --chart-4: oklch(0.371 0 0);
-    --chart-5: oklch(0.269 0 0);
-    --sidebar: oklch(0.205 0 0);
-    --sidebar-foreground: oklch(0.985 0 0);
-    --sidebar-primary: oklch(0.488 0.243 264.376);
-    --sidebar-primary-foreground: oklch(0.985 0 0);
-    --sidebar-accent: oklch(0.269 0 0);
-    --sidebar-accent-foreground: oklch(0.985 0 0);
-    --sidebar-border: oklch(1 0 0 / 10%);
-    --sidebar-ring: oklch(0.556 0 0);
+.dark, :root[data-theme="dark"] {
+    --text: #efebf0;
+    --background: #080608;
+    --primary: #c5b3c5;
+    --secondary: #5e4c48;
+    --accent: #968c75;
+
+    /* Shadcn dark mode mapped */
+    --foreground: var(--text);
+    --card: var(--background);
+    --card-foreground: var(--text);
+    --popover: var(--background);
+    --popover-foreground: var(--text);
+    --primary-foreground: #000000;
+    --secondary-foreground: #ffffff;
+    --muted: color-mix(in srgb, var(--background) 80%, white);
+    --muted-foreground: color-mix(in srgb, var(--text) 70%, transparent);
+    --accent-foreground: #ffffff;
+    --destructive: #ef4444;
+    --border: color-mix(in srgb, var(--primary) 20%, transparent);
+    --input: color-mix(in srgb, var(--primary) 20%, transparent);
+    --ring: var(--primary);
+    
+    --sidebar: var(--background);
+    --sidebar-foreground: var(--text);
+    --sidebar-primary: var(--primary);
+    --sidebar-primary-foreground: #000000;
+    --sidebar-accent: var(--secondary);
+    --sidebar-accent-foreground: #ffffff;
+    --sidebar-border: color-mix(in srgb, var(--primary) 20%, transparent);
+    --sidebar-ring: var(--primary);
 }
 
 @layer base {
