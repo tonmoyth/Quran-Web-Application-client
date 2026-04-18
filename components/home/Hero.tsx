@@ -26,8 +26,8 @@ export function Hero() {
           A contemplative digital sanctuary for the study of the Noble Quran. Immerse yourself in the rhythm of the sacred text through an editorial lens of beauty and stillness.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-          <Link href="/surah">
-            <Button className="bg-[linear-gradient(135deg,#342434_0%,#4b3a4b_100%)] text-on-primary px-10 py-6 rounded-xl font-bold tracking-wide shadow-[0_20px_40px_-15px_rgba(75,58,75,0.4)] hover:shadow-[0_25px_50px_-15px_rgba(75,58,75,0.5)] hover:cursor-pointer  hover:-translate-y-0.5  transition-all duration-300 text-base">
+          <Link href="/surahs">
+            <Button className="bg-[linear-gradient(135deg,#342434_0%,#4b3a4b_100%)] text-white px-10 py-6 rounded-xl font-bold tracking-wide shadow-[0_20px_40px_-15px_rgba(75,58,75,0.4)] hover:shadow-[0_25px_50px_-15px_rgba(75,58,75,0.5)] hover:cursor-pointer  hover:-translate-y-0.5  transition-all duration-300 text-base">
               Read Surah
             </Button>
           </Link>

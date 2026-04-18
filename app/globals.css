@@ -134,5 +134,11 @@
     }
   html {
     @apply font-sans;
-    }
+  }
+  .font-arabic {
+    font-size: var(--arabic-font-size, 30px) !important;
+  }
+  .translation-text {
+    font-size: var(--translation-font-size, 16px) !important;
+  }
 }
