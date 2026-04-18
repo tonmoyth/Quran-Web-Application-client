@@ -20,19 +20,18 @@ export function Navbar({ onOpenSettings }: NavbarProps) {
     <header className="fixed top-0 w-full z-50 bg-background-custom/80 dark:bg-on-background/80 backdrop-blur-xl shadow-[0_40px_60px_-5px_rgba(27,28,29,0.06)]">
       <nav className="flex justify-between items-center px-4 py-4 w-full max-w-screen-2xl mx-auto">
         <div className="text-2xl font-bold text-primary font-serif tracking-tight">
-          <Link href="/">The Sacred Editorial</Link>
+          <Link href="/">Quran </Link>
         </div>
         <div className="hidden md:flex items-center space-x-12 font-serif tracking-tight">
           {navLinks.map((link) => {
             const isActive = link.href === "/" ? pathname === "/" : pathname?.startsWith(link.href);
             return (
-              <Link 
+              <Link
                 key={link.href}
-                className={`transition-colors duration-300 ${
-                  isActive 
-                    ? "text-primary border-b-2 border-primary pb-1" 
+                className={`transition-colors duration-300 ${isActive
+                    ? "text-primary border-b-2 border-primary pb-1"
                     : "text-primary/60 hover:text-primary hover:bg-secondary/20 px-2 py-1 rounded"
-                }`} 
+                  }`}
                 href={link.href}
               >
                 {link.label}

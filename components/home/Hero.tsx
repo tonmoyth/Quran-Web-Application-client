@@ -28,7 +28,7 @@ export function Hero() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
           <Link href="/surahs">
             <Button className="bg-[linear-gradient(135deg,#342434_0%,#4b3a4b_100%)] text-white px-10 py-6 rounded-xl font-bold tracking-wide shadow-[0_20px_40px_-15px_rgba(75,58,75,0.4)] hover:shadow-[0_25px_50px_-15px_rgba(75,58,75,0.5)] hover:cursor-pointer  hover:-translate-y-0.5  transition-all duration-300 text-base">
-              Read Surah
+              Read Surahs
             </Button>
           </Link>
 
